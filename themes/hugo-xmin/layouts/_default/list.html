@@ -5,7 +5,7 @@
 {{ end }}
 
 {{ .Content }}
-
+{{if not .IsHome }} 
 <ul>
   {{ $pages := .Pages }}
   {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
@@ -16,5 +16,6 @@
   </li>
   {{ end }}
 </ul>
+ {{ end }}
 
 {{ partial "footer.html" . }}
